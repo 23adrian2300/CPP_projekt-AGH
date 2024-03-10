@@ -20,7 +20,7 @@ private:
 
 int readHighscore()
 {
-    std::ifstream file("functions/highscores.txt");
+    std::ifstream file("highscores.txt");
     int highscore = 0;
     int points;
     while (file >> points)

@@ -80,7 +80,7 @@ void Game::start()
         if (gameover)
         {
             ofstream file;
-            file.open("functions/highscores.txt", ios::app);
+            file.open("highscores.txt", ios::app);
             file << points << endl;
             file.close();
             sf::sleep(sf::seconds(5));
