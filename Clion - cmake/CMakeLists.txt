@@ -3,13 +3,13 @@ project(CPP_projekt_AGH_main)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(functions)
+include_directories(../functions)
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
-file(COPY "images" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
-file(COPY "font" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
-file(COPY "highscores.txt" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+file(COPY "../images" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+file(COPY "../font" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+file(COPY "../highscores.txt" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
 
 # Pobierz SFML za pomocą FetchContent
 include(FetchContent)
@@ -28,9 +28,9 @@ set(SFML_LIBRARY_DIR "${CMAKE_BINARY_DIR}/_deps/sfml-src/lib")
 link_directories(${SFML_LIBRARY_DIR})
 
 add_executable(CPP_projekt_AGH_main
-        functions/game.cpp
-        functions/game.hpp
-        main.cpp)
+        ../functions/game.cpp
+        ../functions/game.hpp
+        ../main.cpp)
 
 
 target_link_libraries(CPP_projekt_AGH_main sfml-graphics sfml-window sfml-system)

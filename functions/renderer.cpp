@@ -18,10 +18,10 @@ void Game::render()
         }
     }
 
-    for (size_t i = 0; i < SQUARES; ++i)
+    for (auto & i : root1)
     {
         sprite->setTextureRect(sf::IntRect(hue * BLOCK_SIZE, 0, BLOCK_SIZE, BLOCK_SIZE));
-        sprite->setPosition(root1[i].x * BLOCK_SIZE, root1[i].y * BLOCK_SIZE);
+        sprite->setPosition(i.x * BLOCK_SIZE, i.y * BLOCK_SIZE);
         window->draw(*sprite);
     }
 

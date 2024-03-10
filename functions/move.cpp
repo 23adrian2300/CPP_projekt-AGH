@@ -14,13 +14,13 @@ void Game::moveShapeDown()
 
     if (limit())
     {
-        for (size_t i = 0; i < SQUARES; ++i)
+        for (auto & i : root2)
         {
-            grid[root2[i].y][root2[i].x] = hue;
+            grid[i.y][i.x] = hue;
         }
 
         hue = rand() % IMG + 1;
-        int number = rand() % IMG;
+        int number{rand() % IMG};
 
         for (size_t i = 0; i < SQUARES; ++i)
         {

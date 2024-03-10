@@ -1,27 +1,11 @@
 #include "game.hpp"
-#include <time.h>
 #include <fstream>
 #include <memory>
-
-class TetrisGame
-{
-public:
-    void run()
-    {
-        std::srand(static_cast<int>(std::time(0)));
-
-        game = std::make_shared<Game>();
-        game->start();
-    }
-
-private:
-    std::shared_ptr<Game> game;
-};
 
 int readHighscore()
 {
     std::ifstream file("highscores.txt");
-    int highscore = 0;
+    int highscore{0};
     int points;
     while (file >> points)
     {
@@ -37,14 +21,14 @@ int readHighscore()
 class TetrisMenu
 {
 public:
-    void generate()
+    static void generate()
     {
         sf::RenderWindow window(sf::VideoMode(800, 600), "Tetris");
 
-        bool inMenu = true;
-        bool inGame = false;
-        bool inInstructions = false;
-        bool quitGame = false;
+        bool inMenu{true};
+        bool inGame{false};
+        bool inInstructions{false};
+        bool quitGame{false};
         sf::Image icon;
         if (icon.loadFromFile("images/icon.ico"))
         {
@@ -81,12 +65,12 @@ public:
         highscoreText.setPosition(10, 10);
 
         sf::Clock clock;
-        float animationTime = 5;
-        sf::Color defaultColor = sf::Color::White;
-        sf::Color hoverColor = sf::Color::Red;
-        bool playHovered = false;
-        bool instructionsHovered = false;
-        bool quitHovered = false;
+        float animationTime{5};
+        sf::Color defaultColor{sf::Color::White};
+        sf::Color hoverColor{sf::Color::Red};
+        bool playHovered{false};
+        bool instructionsHovered{false};
+        bool quitHovered{false};
 
         sf::Texture instructionsTexture;
         instructionsTexture.loadFromFile("images/instruction.jpg");
@@ -98,13 +82,13 @@ public:
         sf::Text backButton("Back", font, 40);
         backButton.setFillColor(sf::Color::White);
         backButton.setPosition(350, 500);
-        sf::Color backDefaultColor = sf::Color::White;
-        sf::Color backHoverColor = sf::Color::Red;
-        bool backHovered = false;
+        sf::Color backDefaultColor{sf::Color::White};
+        sf::Color backHoverColor{sf::Color::Red};
+        bool backHovered{false};
 
         while (window.isOpen())
         {
-            sf::Event event;
+            sf::Event event{};
             while (window.pollEvent(event))
             {
                 if (event.type == sf::Event::Closed)
@@ -243,8 +227,8 @@ public:
             }
             else if (inGame)
             {
-                TetrisGame tetris;
-                tetris.run();
+                Game tetris;
+                tetris.start();
                 inGame = false;
                 inMenu = true;
             }

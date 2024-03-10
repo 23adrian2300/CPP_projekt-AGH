@@ -2,8 +2,7 @@
 
 int main()
 {
-    TetrisMenu menu;
-    menu.generate();
+    TetrisMenu::generate();
 
     return 0;
 }

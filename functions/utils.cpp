@@ -5,13 +5,13 @@ void Game::rotateShape()
     if (change)
     {
         CoordinateShape center = root1[1];
-        for (size_t i = 0; i < SQUARES; ++i)
+        for (auto & i : root1)
         {
-            int x = root1[i].y - center.y;
-            int y = root1[i].x - center.x;
+            const int x{i.y - center.y};
+            const int y{i.x - center.x};
 
-            root1[i].x = center.x - x;
-            root1[i].y = center.y + y;
+            i.x = center.x - x;
+            i.y = center.y + y;
         }
 
         if (limit())
@@ -43,12 +43,12 @@ void Game::changePosition()
 
 bool Game::limit()
 {
-    for (size_t i = 0; i < SQUARES; ++i)
+    for (auto & i : root1)
     {
-        if (root1[i].x < 0 ||
-            root1[i].x >= COLS ||
-            root1[i].y >= LINES ||
-            grid[root1[i].y][root1[i].x] != 0)
+        if (i.x < 0 ||
+            i.x >= COLS ||
+            i.y >= LINES ||
+            grid[i.y][i.x] != 0)
         {
             return true;
         }
@@ -58,10 +58,10 @@ bool Game::limit()
 
 void Game::setScore()
 {
-    int match = LINES - 1;
+    int match{LINES - 1};
     for (int i = match; i >= 1; --i)
     {
-        int sum = 0;
+        int sum{0};
         for (size_t j = 0; j < COLS; ++j)
         {
             if (grid[i][j] != 0)

@@ -39,8 +39,8 @@ class Game
         {{{0, 2}, {1, 0}, {1, 1}, {1, 2}}},
         {{{0, 0}, {0, 1}, {1, 0}, {1, 1}}}};
 
-    CoordinateShape root1[SQUARES];
-    CoordinateShape root2[SQUARES];
+    CoordinateShape root1[SQUARES]{};
+    CoordinateShape root2[SQUARES]{};
     shared_ptr<sf::RenderWindow> window;
     sf::Texture tiles, background;
     shared_ptr<sf::Sprite> sprite;
@@ -57,7 +57,7 @@ class Game
     float timer;
     float delay;
 
-protected:
+private:
     void handleEvents();
     void loadTextures();
     void render();
