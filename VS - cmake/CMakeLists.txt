@@ -21,7 +21,7 @@ FetchContent_MakeAvailable(SFML)
 
 
 
-add_executable(Tetris main.cpp functions/game.cpp functions/game.hpp)
+add_executable(Tetris main.cpp functions/game.cpp functions/game.h functions/constans.h functions/menu.cpp functions/menu.h functions/textures.cpp functions/textures.h)
 target_link_libraries(Tetris PRIVATE sfml-graphics )
 target_compile_features(Tetris PRIVATE cxx_std_23)
 

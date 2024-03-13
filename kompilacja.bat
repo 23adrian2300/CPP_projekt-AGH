@@ -1,1 +1,1 @@
-g++ -I C:\SFML\include main.cpp functions\game.cpp -mwindows -o main.exe -L C:\SFML\lib -lsfml-graphics -lsfml-window -lsfml-system
+g++ -I C:\SFML\include main.cpp functions\game.cpp functions/game.h functions/textures.h functions/textures.cpp functions/menu.cpp functions/menu.h functions/constans.h -mwindows -o main.exe -L C:\SFML\lib -lsfml-graphics -lsfml-window -lsfml-system
