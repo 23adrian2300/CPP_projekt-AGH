@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TEXTURES_H
+#define TEXTURES_H
 
 #include <SFML/Graphics.hpp>
 #include "constans.h"
@@ -34,3 +35,5 @@ public:
     void loadTextures();
 
 };
+
+#endif //TEXTURES_H

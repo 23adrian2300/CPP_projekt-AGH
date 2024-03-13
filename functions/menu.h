@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MENU_H
+#define MENU_H
 
 #include <fstream>
 #include <memory>
@@ -26,3 +27,5 @@ public:
 
     static void gameSettings(sf::RenderWindow &window, bool &inGame, bool &inMenu);
 };
+
+#endif //MENU_H

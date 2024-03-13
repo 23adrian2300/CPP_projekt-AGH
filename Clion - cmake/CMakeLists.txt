@@ -9,7 +9,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 file(COPY "../images" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
 file(COPY "../font" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
-file(COPY "../highscores.txt" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
+file(COPY "../highscore" DESTINATION ${EXECUTABLE_OUTPUT_PATH})
 
 include(FetchContent)
 FetchContent_Declare(

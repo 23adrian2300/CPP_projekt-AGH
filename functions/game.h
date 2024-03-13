@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 
 #include <SFML/Graphics.hpp>
 #include "constans.h"
@@ -57,3 +58,5 @@ public:
 
     void start(TextureManager &textureManager);
 };
+
+#endif //GAME_H

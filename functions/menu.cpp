@@ -3,7 +3,7 @@
 #include "game.h"
 
 int TetrisMenu::readHighscore() {
-    std::ifstream file("highscores.txt");
+    std::ifstream file("highscore/highscores.txt");
     int highscore{0};
     int points;
     while (file >> points) {

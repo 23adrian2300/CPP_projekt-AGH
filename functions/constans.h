@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONSTANS_H
+#define CONSTANS_H
 
 #include <array>
 #include <memory>
@@ -25,3 +26,4 @@ struct WindowConfig {
     sf::Vector2i position;
 };
 
+#endif //CONSTANS_H
