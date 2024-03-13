@@ -19,7 +19,7 @@ Następnie ponownie musimy dodać zmienne środkowiskowe do path: C:\MinGW\bin
 Początkowo musimy za pomocą komendy `cd {ścieżka do katalogu z programem}` dostać się do katalogu z grą, dokładnie tam gdzie jest plik main.cpp.
 Do skompilowania wykorzystałem kompilator g++. Całość odbyła się za pomocą komendy, dostępnej również w pliku kompilacja.bat:
 
-`g++ -I C:\SFML\include main.cpp functions\game.cpp -mwindows -o main.exe -L C:\SFML\lib -lsfml-graphics -lsfml-window -lsfml-system`
+`g++ -I C:\SFML\include main.cpp functions/constans.h functions/game.h functions\game.cpp functions/textures.h functions/textures.cpp functions/menu.h functions/menu.cpp -mwindows -o main.exe -L C:\SFML\lib -lsfml-graphics -lsfml-window -lsfml-system`
 
 Wystarczy tylko uruchomić plik kompilacja.bat i wszystko samo powinno się skompilować i powinien utworzyć się plik main.exe.
 
@@ -29,7 +29,7 @@ Stworzyłem także dwa `CmakeLists.txt`. Znajdują się one w katalogach `Clion 
 
 ### Uruchomienie
 
-Aby uruchomić, należy albo z poziomu katalogu dwukrotnie kliknąc na powstały plik main.exe, lub z poziomu konsoli wywołać komendę: 'start main.exe' lub uruchomić w odpowiednim środowkisu dzięki plikom CmakeLists.txt
+Aby uruchomić, należy albo z poziomu katalogu dwukrotnie kliknąc na powstały plik main.exe, lub z poziomu konsoli wywołać komendę: 'start main.exe' lub uruchomić w odpowiednim środowisku dzięki plikom CmakeLists.txt.
 
 ## Korzystanie z aplikacji
 
